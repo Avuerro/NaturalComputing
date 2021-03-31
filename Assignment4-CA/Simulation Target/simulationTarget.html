@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cells & Obstacles</title>
+<title>Cells, Obstacles & Goals</title>
 <style type="text/css">
 body{
     text-align: center;
@@ -14,13 +14,13 @@ body{
 </style>
 <script src="artistoo.js"></script>
 <script src="fpsmeter.min.js"></script>
-<script src="simulation.js"></script>
+<script src="simulationTarget.js"></script>
 </head>
 
 <body onload="initialize()">
 <center>
-<h1>Cells & Obstacles</h1>
-<center><p>Cells moving around in an area with regularly-spaced obstacles.</p></center>
+<h1>Cells, Obstacles & Goals</h1>
+<center><p>Cells moving from left to right in an area with regularly-spaced obstacles.</p></center>
 <button onclick="startsim()">Start</button>
 &nbsp;&nbsp;
 <button onclick="stopsim()">Stop</button>
@@ -35,7 +35,18 @@ body{
 		<option value=31>31</option>
 		<option selected value=50>50</option>	
 		<option value=83>83</option>
-		<option value=99999999>No obstacles</option>
+		<option value=99999999>None</option>
+	</select>
+	</td>
+	<td>&nbsp;&nbsp;</td>
+	<td>Goal importance:</td>
+	<td>
+	<select name="goalselect" oninput="sim.C.soft_constraints[4].conf.LAMBDA_ATTRACTIONPOINT[1]=parseInt(this.value)">
+		<option value=0>0</option>
+		<option value=10>10</option>
+		<option selected value=25>25</option>
+		<option value=50>50</option>	
+		<option value=100>100</option>
 	</select>
 	</td>
 	<td>&nbsp;&nbsp;</td>
@@ -52,10 +63,10 @@ body{
 <br>
 <button onclick="seedCells(1)">+1 cell</button>
 <button onclick="seedCells(10)">+10 cells</button>
-<button onclick="seedCells(100)">+100 cells</button>
+<button onclick="seedCells(25)">+25 cells</button>
 <button onclick="killCells(1)">-1 cell</button>
 <button onclick="killCells(10)">-10 cells</button>
-<button onclick="killCells(100)">-100 cells</button>
+<button onclick="killCells(25)">-25 cells</button>
 <button onclick="killCells(Object.keys(sim.C.getStat( CPM.PixelsByCell )).length)">-All cells</button>
 </center>
 <br>
