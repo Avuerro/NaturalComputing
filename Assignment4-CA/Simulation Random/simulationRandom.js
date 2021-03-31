@@ -17,7 +17,7 @@ let config = {
 		T : 20,					// CPM temperature
 		
 		// Adhesion parameters:
-		J : [ [NaN,20,20],  			// Background
+		J : [ [0,20,20],  			// Background
 		      [20,0,0],					// Keratocytes
 			  [0,0,0] ],				// Obstacles
 		

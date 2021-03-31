@@ -19,7 +19,7 @@ let config = {
 		T : 20,					// CPM temperature
 		
 		// Adhesion parameters:
-		J : [ [NaN,20,20],  	// Background
+		J : [ [0,20,20],  		// Background
 		      [20,0,0],			// Keratocytes
 			  [0,0,0] ],		// Obstacles
 		
@@ -63,7 +63,6 @@ let config = {
 let sim, meter
 let numberOfObstacles
 let spacing = 50
-let goalImportance = 25
 
 function initializeGrid(){
 	// Add the initializer if not already there
@@ -100,7 +99,7 @@ function initialize(){
 	
 	// Initialize AttractionPoint (goal, on the right side
 	let Cdir = new CPM.AttractionPointConstraint({
-		LAMBDA_ATTRACTIONPOINT : [0,goalImportance,0],
+		LAMBDA_ATTRACTIONPOINT : [0,25,0],
 		ATTRACTIONPOINT : [[0,0], [sim.C.extents[0]-25,sim.C.extents[1]/2], [0,0] ] 
 	})
 	sim.C.add( Cdir )
