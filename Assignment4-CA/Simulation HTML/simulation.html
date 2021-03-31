@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cells & Obstacles</title>
+<style type="text/css">
+body{
+    text-align: center;
+	font-family: "HelveticaNeue-Light", sans-serif; 
+	padding: 15px; 
+    margin: 0;
+    height: 100%;
+}
+</style>
+<script src="artistoo.js"></script>
+<script src="fpsmeter.min.js"></script>
+<script src="simulation.js"></script>
+</head>
+
+<body onload="initialize()">
+<center>
+<h1>Cells & Obstacles</h1>
+<center><p>Cells moving around in an area with regularly-spaced obstacles.</p></center>
+<button onclick="startsim()">Start</button>
+&nbsp;&nbsp;
+<button onclick="stopsim()">Stop</button>
+<br><br>
+<form autocomplete="off">
+<table>
+<tr>
+	<td>Obstacle spacing:</td>
+	<td>
+	<select name="spaceselect" oninput="spacing=parseInt(this.value);sim.initializeGrid()">
+		<option value=25>25</option>
+		<option value=30>30</option>
+		<option selected value=50>50</option>	
+		<option value=80>80</option>
+		<option value=99999999>No obstacles</option>
+	</select>
+	</td>
+	<td>&nbsp;&nbsp;</td>
+	<td>Cell type:</td>
+	<td>
+	<select name="celltypeselect" oninput="sim.C.conf.MAX_ACT[1]=(this.value=='keratocyte')?80:20">
+		<option value="keratocyte">Keratocyte</option>
+		<option value="amoeba">Amoeba</option>	
+	</select>
+	</td>
+</tr>
+</table>
+</form>
+<br>
+<button onclick="seedCells(1)">+1 cell</button>
+<button onclick="seedCells(10)">+10 cells</button>
+<button onclick="seedCells(100)">+100 cells</button>
+<button onclick="killCells(1)">-1 cell</button>
+<button onclick="killCells(10)">-10 cells</button>
+<button onclick="killCells(100)">-100 cells</button>
+<button onclick="killCells(Object.keys(sim.C.getStat( CPM.PixelsByCell )).length)">-All cells</button>
+</center>
+<br>
+</body>
+</html>
