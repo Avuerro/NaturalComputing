@@ -74,8 +74,9 @@ function initializeGrid(){
 	
 	// Initialize obstacles
 	numberOfObstacles=0
-	for( let i = Math.floor(spacing/2) ; i <= this.C.extents[0]-Math.floor(spacing/2) ; i += spacing ){
-		for( let j = Math.floor(spacing/2) ; j <= this.C.extents[1]-Math.floor(spacing/2) ; j += spacing ){
+	let offset = Math.floor((this.C.extents[0]-spacing)%spacing/2)
+	for( let i = Math.floor(spacing/2); i < this.C.extents[0] ; i += spacing ){
+		for( let j = Math.floor(spacing/2); j < this.C.extents[1] ; j += spacing ){
 			this.C.setpix( [i,j], this.C.makeNewCellID(2) )
 			numberOfObstacles++
 		}
