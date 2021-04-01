@@ -1,0 +1,18 @@
+In order to run the simulation, use the following command (requires NodeJS):
+
+node simulation_nodejs.js <cell type> <spacing> <number of cells> <number of frames> <seed> <output folder>
+
+Where
+<cell type> : element from {keratocyte, amoeba}, determining the MAX_ACT value of cells
+<spacing> : spacing between obstacles; we tested {25, 31, 50, 83, 99999999} (99999999 = no obstacles)
+<number of cells> : number of cells (keratocytes/amoeba) to seed; we tested {1, 10, 25, 50}
+<number of frames> : number of frames to run the simulation for; we used 10000
+<seed> : the seed of the simulation, for reproducability; we tested seeds 1-10 for every condition
+<output folder> : the folder in which frames should be saved
+
+
+To generate a video file from the generated frames, use the following command (requires FFmpeg):
+
+ffmpeg -r 60 -i frame-t%d.png -vf "fps=60,format=yuv420p,scale=900:500" out.mp4
+
+Note that this command should be executed from the folder containing the frames you wish to build a video from

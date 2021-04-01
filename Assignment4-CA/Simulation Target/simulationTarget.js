@@ -1,9 +1,11 @@
 "use strict"
 
+/****** Parameters ******/
+
+let extraWidth = 200
+
 
 /****** Simulation Parameters ******/
-
-let extraWidth=200
 
 let config = {
 
@@ -20,15 +22,15 @@ let config = {
 		
 		// Adhesion parameters:
 		J : [ [0,20,20],  		// Background
-		      [20,0,0],			// Keratocytes
+		      [20,0,0],			// Cells
 			  [0,0,0] ],		// Obstacles
 		
 		// Volume parameters
-		LAMBDA_V : [0,50,500],	// Volume importances
+		LAMBDA_V : [0,50,1000],	// Volume importances
 		V : [0,500,250],		// Target volumes
 		
 		// Perimeter parameters
-		LAMBDA_P : [0,2,500],	// Perimeter importances
+		LAMBDA_P : [0,2,1000],	// Perimeter importances
 		P : [0,300,150],		// Target perimeters
 		
 		// Activity parameters
@@ -49,10 +51,6 @@ let config = {
 		ACTCOLOR : [true,false],			// Display pixel activity values
 		SHOWBORDERS : [true,true],			// Display cell borders
 		zoom : 2,							// Zoom level
-		
-		// Output stats
-		STATSOUT : { browser: false, node: true },  // Whether to compute stats or not
-		LOGRATE : 10								// How often to output stats
 	}
 }
 
@@ -81,14 +79,6 @@ function initializeGrid(){
 		for( let j = Math.floor(spacing/2); j < this.C.extents[1] ; j += spacing ){
 			this.C.setpix( [i,j], this.C.makeNewCellID(2) )
 			numberOfObstacles++
-		}
-	}
-	
-	// Seed the right number of cells for each cellkind
-	for( cellkind = 0; cellkind < nrcells.length; cellkind ++ ){	
-		for( i = 0; i < nrcells[cellkind]; i++ ){
-			// First cell is always seeded in the center			
-			this.gm.seedCell( cellkind+1 );
 		}
 	}
 }
@@ -132,22 +122,23 @@ function stopsim(){
 }
 
 function seedCell( kind, max_attempts = 10000 ){
-	let p = sim.C.midpoint;
+	// Find empty location for new cell (to the left of the obstacles)
+	let p = [25, Math.floor(sim.C.extents[1]/2)]
 	while( sim.C.pixt( p ) !== 0 && max_attempts-- > 0 ){
 		for( let i = 0 ; i < p.length ; i ++ ){
-			if( i == 0 ){
-				p[i] = sim.C.ran(0,Math.floor(extraWidth/2))
-			} else {
-				p[i] = sim.C.ran(0,sim.C.extents[1]);
-			}
+			p[i] = sim.C.ran(0, (i == 0) ? Math.floor(extraWidth/2):sim.C.extents[1])
 		}
 	}
+	
+	// If no location found, return (failed)
 	if( sim.C.pixt(p)  !== 0 ){
-		return 0 // failed
+		return 
 	}
+	
+	// Create new cell
 	const newID = sim.C.makeNewCellID( kind );
 	sim.C.setpix( p, newID );
-	return newID
+
 }
 
 function seedCells( ncells ){
@@ -172,12 +163,4 @@ function killCells( ncells ){
 		}
 	}
 	sim.C.stat_values = {}
-}
-
-function killAllCells(){
-	let cells = Object.keys( sim.C.getStat( CPM.PixelsByCell ) )
-	if( cells.length == 0 ) return
-	for( let cp of sim.C.cellPixels() ){
-		sim.C.setpix( cp[0], 0 )
-	}
 }
