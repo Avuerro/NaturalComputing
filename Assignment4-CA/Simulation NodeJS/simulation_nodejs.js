@@ -35,7 +35,7 @@ let config = {
 		// Adhesion parameters:
 		J : [ [0,20,20],  			// Background
 		      [20,0,0],				// Cells
-			  [0,0,0] ],			// Obstacles
+			  [20,0,0] ],			// Obstacles
 		
 		// Volume parameters
 		LAMBDA_V : [0,50,1000],		// Volume importances
