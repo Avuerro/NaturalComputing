@@ -1,6 +1,11 @@
 ##negative selection dir
 ./Assignment3-AIS/negative-selection
 
+## Old assignments
+./Assignment1-EC
+./Assignment2-SI
+./Assignment3-AIS
+./Assignment4-CA
 
 ##jupyter notebook checkpoints
 .ipynb_checkpoints
