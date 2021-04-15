@@ -1,4 +1,4 @@
-# Natural Computing - Assignment 3
+# Natural Computing - Assignment 5
 ## Ensemble Learning
 #### Solutions team 25: Chihab Amghane, Max Driessen, Jordy Naus
 
