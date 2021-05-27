@@ -10,7 +10,7 @@ reset_on_extinction   = False
 # node activation options
 activation_default      = random
 activation_mutate_rate  = 0.5
-activation_options      = gauss identity inv tanh sigmoid sin abs cos step
+activation_options      = gauss identity inv tanh sigmoid sin abs step cos
 
 # node aggregation options
 aggregation_default     = sum
@@ -36,7 +36,7 @@ conn_delete_prob        = 0.25
 
 # connection enable options
 enabled_default         = True
-enabled_mutate_rate     = 0
+enabled_mutate_rate     = 0.0
 
 feed_forward            = True
 initial_connection      = partial_direct 0.05
