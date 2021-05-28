@@ -10,3 +10,6 @@
 
 ##jupyter notebook checkpoints
 .ipynb_checkpoints
+
+# NEAT Checkpoints
+./Project/NEAT-Checkpoints
