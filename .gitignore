@@ -12,4 +12,4 @@
 .ipynb_checkpoints
 
 # NEAT Checkpoints
-./Project/NEAT-Checkpoints
+**/NEAT-checkpoints
