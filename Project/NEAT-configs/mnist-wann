@@ -10,7 +10,7 @@ reset_on_extinction   = False
 # node activation options
 activation_default      = random
 activation_mutate_rate  = 0.5
-activation_options      = gauss identity inv tanh sigmoid sin abs step cos
+activation_options      = wgauss identity winv tanh wsig wsin abs step wcos relu
 
 # node aggregation options
 aggregation_default     = sum
