@@ -1,5 +1,7 @@
 # Weight Agnostic Neural Networks
 
+The code used to run the WANN implementation can be found in this folder, all the instructions below are still valid but there is only one caveat. If you would like to run the network on fashionmnist or mnist data, please download the data first, then modify the locations in the classify_gym module. To be precise, you should change mnist_256 and fashion_mnist.
+
 Weight Agnostic Networks: network topologies evolved to work with a variety of shared weights. Adapted from the [prettyNEAT](../prettyNEAT) package. This repository represents a snapshot of the code used to produce the results in the original [WANN paper](https://weightagnostic.github.io/). The goal was to create minimal rather than general code for clearer understanding. If you are interested in a more extendable and general implementation for your own experiments, we recommend using the [WANN fork](../prettyNEAT_WANN) of the [prettyNEAT](../prettyNEAT) package.
 
 ## Dependencies
