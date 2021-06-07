@@ -103,7 +103,7 @@ def digit_raw():
 
 
 
-def load_data(data_dir='./../../fashion_mnist_data', train=True):
+def load_data(data_dir, train):
     if train:
         labels_path = os.path.join(data_dir, 'train-labels.gz')
         images_path = os.path.join(data_dir, 'train-images.gz')
@@ -120,21 +120,20 @@ def load_data(data_dir='./../../fashion_mnist_data', train=True):
 
     return images,labels
 
-def mnist_256(train=True):
+def mnist_256(data_dir="../../../../mnist_data", train=True):
     '''
     Converts 28x28 mnist digits to [16x16]
     [samples x pixels]  ([N X 256])
     '''
-    images, labels = load_data(data_dir='./../../mnist_data', train=train)
+    images, labels = load_data(data_dir=data_dir, train=train)
     z = (images/255)
     z = preprocess(z, (16, 16))
 
     z = z.reshape(-1, (256))
     return z, labels
 
-def fashion_mnist(train=True):
-
-    images, labels = load_data(data_dir='./../../fashion_mnist_data', train=train)
+def fashion_mnist(data_dir="../../../../fashion_mnist_data",train=True):
+    images, labels = load_data(data_dir=data_dir, train=train)
     images = (images/255)
     images = preprocess(images, (16, 16))
     images = images.reshape(-1, (256))
