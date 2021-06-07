@@ -13,3 +13,7 @@
 
 # NEAT Checkpoints
 **/NEAT-checkpoints
+
+# WANN Logs
+/Project/WANN/log
+
