@@ -59,6 +59,8 @@ The full list of hyperparameters and their meaning is explained in [hypkey.txt](
 
 ## Testing and Tuning Weight Agnostic Neural Networks
 
+If you would like to test the network on the mnist or fashionmnist data you should call the [evaluateModel method](https://github.com/Avuerro/NaturalComputing/blob/0d00725c1f744b04c823e383d7d8336bb8856109/Project/WANN/wann_src/task.py#L143). Please see the following notebooks for examples of how to test the model, [mnist](https://github.com/Avuerro/NaturalComputing/blob/main/Project/WANN/Mnist%20Performance%20Statistics.ipynb) and [fashionmnist](https://github.com/Avuerro/NaturalComputing/blob/main/Project/WANN/Fashion-Mnist%20Performance%20Statistics.ipynb).
+
 To view or test a WANN:
 
 ```
