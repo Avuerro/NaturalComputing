@@ -89,36 +89,6 @@ class Task():
 
         return totalReward
 
-    def predict(self, wVec, aVec, x, view=False, seed=-1, mnist=False):
-
-        if seed >= 0:
-            random.seed(seed)
-            np.random.seed(seed)
-            self.env.seed(seed)
-
-        # train accuracy
-        state = x
-        annOut = act(wVec, aVec, self.nInput, self.nOutput, state)
-        # these are the (soft max) outputs
-        action = selectAct(annOut, self.actSelect)
-        predictions = np.argmax(action, axis=1)
-        return predictions
-
-        # def evaluate_model(x, y):
-        #     # train accuracy
-        #     state = x
-        #     annOut = act(wVec, aVec, self.nInput, self.nOutput, state)
-        #     # these are the (soft max) outputs
-        #     action = selectAct(annOut, self.actSelect)
-
-        #     predictions = np.argmax(action, axis=1)
-        #     n_correct = np.sum(predictions == y)
-        #     accuracy = n_correct / y.shape[0]
-        #     return accuracy,predictions
-        # train_accuracy, train_predictions = evaluate_model(x_train, y_train)
-        # test_accuracy, test_predictions = evaluate_model(x_test, y_test)
-
-
 # -- 'Weight Agnostic Network' evaluation -------------------------------- -- #
 
 
@@ -155,7 +125,22 @@ class Task():
 
         return x_train, y_train, x_test, y_test
 
-    def evaluateModel(self, wVec, aVec, hyp, seed=-1, nRep=False, nVals=6, view=False, returnVals=False):
+    def predict(self, wVec, aVec, x, view=False, seed=-1, mnist=False):
+
+        if seed >= 0:
+            random.seed(seed)
+            np.random.seed(seed)
+            self.env.seed(seed)
+
+        # train accuracy
+        state = x
+        annOut = act(wVec, aVec, self.nInput, self.nOutput, state)
+        # these are the (soft max) outputs
+        action = selectAct(annOut, self.actSelect)
+        predictions = np.argmax(action, axis=1)
+        return predictions
+
+    def evaluateModel(self, wVec, aVec, hyp, mnist=False, seed=-1, nRep=False, nVals=6, view=False, returnVals=False):
 
         if nRep is False:
             nRep = hyp['alg_nReps']
@@ -166,7 +151,7 @@ class Task():
         else:
             wVals = np.linspace(-self.absWCap, self.absWCap, nVals)
 
-        x_train, y_train, x_test, y_test = self.obtain_data()
+        x_train, y_train, x_test, y_test = self.obtain_data(mnist)
 
         train_predictions = np.empty((nVals, y_train.shape[0]), dtype=np.float64)
         test_predictions = np.empty((nVals, y_test.shape[0]), dtype=np.float64)

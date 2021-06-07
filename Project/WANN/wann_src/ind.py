@@ -237,7 +237,6 @@ def act(weights, aVec, nInput, nOutput, inPattern):
       nodeAct[:,iNode] = applyAct(aVec[iNode], rawAct) 
       #print(nodeAct)
   output = nodeAct[:,-nOutput:]   
-  pdb.set_trace()
   return output
 
 def applyAct(actId, x):
