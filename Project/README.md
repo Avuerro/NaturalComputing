@@ -11,9 +11,27 @@ On top of that, these implementations have been extended to a more complex class
 ## Structure
 
 The repo contains 9 notebooks, and one Python source code file.
+
 First, both the notebook named ```preprocessing.ipynb``` and the source file ```preprocessing.py``` have been used to create the preprocessing pipeline.
 Both work the same, although the notebook contains visuals to show the preprocessing pipeline.
 
+Next, the three custom implementations and the baseline method each have two separate notebooks. 
+One notebook for testing the method on MNIST, and another to test the method on Fashion-MNIST.
+Generally, the naming scheme for the notebooks is as follows:
+
+```METHOD-DATASET.ipynb```,
+where `METHOD` can be either one of the following:
+ - DEAP;
+ - DEAPWANN;
+ - NEAT;
+ - WANN.
+and `DATASET` can be one of the following:
+ - MNIST;
+ - Fashion-MNIST.
+
 ## How to Run
+
+Before running any notebook, the notebook ```preprocessing.ipynb``` should be executed, since this notebook makes sure the correct data is downloaded, preprocessed and saved.
+In this notebook, there is a global parameter named `DATASET`, which can be set to `MNIST` or `Fashion-MNIST`, depending on which dataset you want to download and preprocess.
 
 ## Screenshots of System Behavior
