@@ -58,13 +58,7 @@ The data needed to run these notebooks is either provided in the notebook, or it
 
 ### WANN
 
-Running WANN code is a bit harder, and Python 3.5 is needed to do so.
-When you are in an environment that supports Python 3.5, WANN can be ran with the following command:
-
-```python wann_train.py -p p/DATASET.json -n 8```,
-where `DATASET` can be, again, one of the following:
- - MNIST;
- - Fashion-MNIST.
+Running WANN code is a bit harder, and for the full explanation how this works, we would like to refer to  a more detailed ReadMe in the ```WANN``` folder.
 
 ## Screenshots of System Behavior
 
