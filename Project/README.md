@@ -44,7 +44,7 @@ Besides these files, we have the following folders:
  - `NEAT-results`, which contains the raw results for the NEAT algorithm after running the algorithm.
  - `WANN`, which contains the source code for running the WANN algorithm.
  - `imgs`, which contains images of the results of the project.
- - `screenshots`, which is now empty, but will be filled with example screenshots of system behavior.
+ - `screenshots`, which contains example screenshots of system behavior.
 
 ## How to Run
 
