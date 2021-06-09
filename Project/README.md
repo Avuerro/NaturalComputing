@@ -25,7 +25,8 @@ where `METHOD` can be either one of the following:
  - DEAPWANN;
  - NEAT;
  - WANN.
-and `DATASET` can be one of the following:
+
+On top of that, `DATASET` can be one of the following:
  - MNIST;
  - Fashion-MNIST.
 
