@@ -26,7 +26,7 @@ If you would like to train the model on the MNIST data run the following command
 ```
 python wann_train.py -p p/mnist256.json -n 8
 ```
-Where `8` is the number of workers you have on your computer, and `p/mnist256.json` contains hyperparameters for the MNIST task. If you would like to train the model on the Fashion MNIST task, you can use the following commands
+Where `8` is the number of workers you have on your computer, and `p/mnist256.json` contains hyperparameters for the MNIST task. If you would like to train the model on the Fashion MNIST task, you can use the following command:
 
 ```
 python wann_train.py -p p/fashion_mnist.json -n 8
@@ -40,7 +40,7 @@ If you would like to test the network on the mnist or fashionmnist data you shou
 
 ### Analysing the input pixels used by the model.
 
-If you are interested in which pixels are used for which class by the model, you should run the [usedInputs method](https://github.com/Avuerro/NaturalComputing/blob/30cebfb059ec74fad595ca526b4133763729b541/Project/WANN/wann_src/task.py#L195). This method will return a dictionary where the keys are the classes and each value is a list containing the input pixels used for that class. If you would like to go one step further and recreate the tree, e.g. determine which _functions_ the tree consist of, you could utilize the activationVector which contains the activation function of each node. However, keep in mind that determining which _functions_ the tree consists of is an experimental part of the code.
+If you are interested in which pixels are used for which class by the model, you should run the [usedInputs method](https://github.com/Avuerro/NaturalComputing/blob/30cebfb059ec74fad595ca526b4133763729b541/Project/WANN/wann_src/task.py#L195). The _usedInputs method_ should be called with the weight vector and the activation vector. The weight vector provides the information necessary to determine which nodes are connected with eachother and the activation vector contains information about the activation functions of the nodes.The _usedInputs method_ will return a dictionary where the keys are the classes and each value is a list containing the input pixels used for that class. If you would like to go one step further and recreate the tree, e.g. determine which _functions_ the tree consist of, you could utilize the activationVector which contains the activation function of each node. However, keep in mind that determining which _functions_ the tree consists of is an experimental part of the code.
 
 Adam Gaier and David Ha.  Weight agnostic neural networks.  2019.https://weightagnostic.github.io
 
