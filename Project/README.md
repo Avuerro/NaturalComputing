@@ -20,6 +20,7 @@ One notebook for testing the method on MNIST, and another to test the method on 
 Generally, the naming scheme for the notebooks is as follows:
 
 ```METHOD-DATASET.ipynb```,
+
 where `METHOD` can be either one of the following:
  - DEAP;
  - DEAPWANN;
