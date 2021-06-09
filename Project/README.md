@@ -60,10 +60,16 @@ For each implementation, a screenshot will be shown while running the MNIST data
 
 ### Preprocessing
 
-![preprocessing](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Results of performing preprocessing")
+![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/preprocessing.png "Results of performing preprocessing")
 
 ### DEAP
 
+![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/DEAP.png "Results of performing preprocessing")
+
 ### NEAT
 
+![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/NEAT.png "Results of performing preprocessing")
+
 ### DEAPWANN
+
+![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/DEAPWANN.png "Results of performing preprocessing")
