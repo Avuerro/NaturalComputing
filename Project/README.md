@@ -64,12 +64,12 @@ For each implementation, a screenshot will be shown while running the MNIST data
 
 ### DEAP
 
-![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/DEAP.png "Results of performing preprocessing")
+![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/DEAP.png "System behavior of DEAP")
 
 ### NEAT
 
-![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/NEAT.png "Results of performing preprocessing")
+![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/NEAT.png "System behavior of NEAT")
 
 ### DEAPWANN
 
-![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/DEAPWANN.png "Results of performing preprocessing")
+![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/DEAPWANN.png "System behavior of DEAPWANN")
