@@ -15,7 +15,7 @@ The repo contains 9 notebooks, and one Python source code file.
 First, both the notebook named ```preprocessing.ipynb``` and the source file ```preprocessing.py``` have been used to create the preprocessing pipeline.
 Both work the same, although the notebook contains visuals to show the preprocessing pipeline.
 
-Next, the three custom implementations and the baseline method each have two separate notebooks. 
+Next, the three custom implementations each have two separate notebooks. 
 One notebook for testing the method on MNIST, and another to test the method on Fashion-MNIST.
 Generally, the naming scheme for the notebooks is as follows:
 
@@ -24,10 +24,17 @@ Generally, the naming scheme for the notebooks is as follows:
 where `METHOD` can be either one of the following:
  - DEAP;
  - DEAPWANN;
- - NEAT;
- - WANN.
+ - NEAT.
 
 On top of that, `DATASET` can be one of the following:
+ - MNIST;
+ - Fashion-MNIST.
+
+Finally, there are two results notebooks, that were used to generate the result plots, and these are named as follows:
+
+```DATASET Results.ipynb```,
+
+where `DATASET` can be, again, one of the following:
  - MNIST;
  - Fashion-MNIST.
 
@@ -46,5 +53,17 @@ In this notebook, there is a global parameter named `DATASET`, which can be set 
 
 After this, using this repo is simply a matter of running any of the notebooks, depending on which method and dataset you want to run.
 The data needed to run these notebooks is either provided in the notebook, or it has been preprocessed before by executing ```preprocessing.ipynb```.
- 
+
 ## Screenshots of System Behavior
+
+For each implementation, a screenshot will be shown while running the MNIST dataset, as an example of how the system behavior should look like.
+
+### Preprocessing
+
+![preprocessing](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Results of performing preprocessing")
+
+### DEAP
+
+### NEAT
+
+### DEAPWANN
