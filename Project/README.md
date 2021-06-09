@@ -48,11 +48,16 @@ Besides these files, we have the following folders:
 
 ## How to Run
 
+### Preprocessing
 Before running any notebook, the notebook ```preprocessing.ipynb``` should be executed, since this notebook makes sure the correct data is downloaded, preprocessed and saved.
 In this notebook, there is a global parameter named `DATASET`, which can be set to `MNIST` or `Fashion-MNIST`, depending on which dataset you want to download and preprocess.
 
+### DEAP, NEAT, WANNDEAP
 After this, using this repo is simply a matter of running any of the notebooks, depending on which method and dataset you want to run.
 The data needed to run these notebooks is either provided in the notebook, or it has been preprocessed before by executing ```preprocessing.ipynb```.
+
+### WANN
+
 
 ## Screenshots of System Behavior
 
