@@ -58,6 +58,13 @@ The data needed to run these notebooks is either provided in the notebook, or it
 
 ### WANN
 
+Running WANN code is a bit harder, and Python 3.5 is needed to do so.
+When you are in an environment that supports Python 3.5, WANN can be ran with the following command:
+
+```python wann_train.py -p p/DATASET.json -n 8```,
+where `DATASET` can be, again, one of the following:
+ - MNIST;
+ - Fashion-MNIST.
 
 ## Screenshots of System Behavior
 
@@ -69,12 +76,16 @@ For each implementation, a screenshot will be shown while running the MNIST data
 
 ### DEAP
 
-![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/DEAP.png "System behavior of DEAP")
+![deap](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/DEAP.png "System behavior of DEAP")
 
 ### NEAT
 
-![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/NEAT.png "System behavior of NEAT")
+![neat](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/NEAT.png "System behavior of NEAT")
 
 ### DEAPWANN
 
-![preprocessing](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/DEAPWANN.png "System behavior of DEAPWANN")
+![deapwann](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/DEAPWANN.png "System behavior of DEAPWANN")
+
+### WANN
+
+![wann](https://github.com/Avuerro/NaturalComputing/blob/main/Project/screenshots/WANN.png "System behavior of WANN")
