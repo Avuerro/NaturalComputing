@@ -229,7 +229,7 @@ class Task():
 
 
     def getDistFitness(self, wVec, aVec, hyp,
-                       seed=-1, nRep=False, nVals=6, view=False, returnVals=False, accuracyTest=False):
+                       seed=-1, nRep=False, nVals=6, view=False, returnVals=False):
         """Get fitness of a single individual with distribution of weights
 
         Args:
@@ -266,21 +266,12 @@ class Task():
         for iRep in range(nRep):
             for iVal in range(nVals):
                 wMat = self.setWeights(wVec, wVals[iVal])
-
-                if accuracyTest:
-                    print('accuracy test')
-                    train_accuracy, test_accuracy = self.testIndividualAccuracy(
+                if seed == -1:
+                    reward[iRep, iVal] = self.testInd(
                         wMat, aVec, seed=seed, view=view)
-                    train_accuracies[iRep, iVal] = train_accuracy
-                    test_accuracies[iRep, iVal] = test_accuracy
-
                 else:
-                    if seed == -1:
-                        reward[iRep, iVal] = self.testInd(
-                            wMat, aVec, seed=seed, view=view)
-                    else:
-                        reward[iRep, iVal] = self.testInd(
-                            wMat, aVec, seed=seed+iRep, view=view)
+                    reward[iRep, iVal] = self.testInd(
+                        wMat, aVec, seed=seed+iRep, view=view)
 
         if returnVals is True:
             return np.mean(reward, axis=0), wVals
