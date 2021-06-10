@@ -24,12 +24,12 @@ Domains tested with:
 If you would like to train the model on the MNIST data run the following command:
 
 ```
-python wann_train.py -p p/mnist256.json -n 8
+python wann_train.py -p p/mnist256.json -n 8 -o 'outputfilename'
 ```
 Where `8` is the number of workers you have on your computer, and `p/mnist256.json` contains hyperparameters for the MNIST task. If you would like to train the model on the Fashion MNIST task, you can use the following command:
 
 ```
-python wann_train.py -p p/fashion_mnist.json -n 8
+python wann_train.py -p p/fashion_mnist.json -n 8 -o 'outputfilename'
 ```
 If you would like to change the number of generations or population size, check the .json hyperparameter files and modify the values. There are multiple values that can be tweaked, such as tournament size and the number of times you would like to run the model. If you would like to experiment with the hyperparameters check out ```hypkey.txt``` and ```default_wann.json``` in the _p_ directory.
 
