@@ -1,6 +1,6 @@
 # Weight Agnostic Neural Networks
 
-The code used to run the WANN implementation can be found in this folder, all the instructions below are still valid but there is only one caveat. The dataloader is adapted to work with local files due to cashing problems and repository being unreachable. So if you would like to run the network on fashionmnist or mnist data, please download the data first, then modify the locations in the classify_gym module. To be precise, you should change [mnist_256](https://github.com/Avuerro/NaturalComputing/blob/e16e4918d59195e9bba238b83d755a6751830d0c/Project/WANN/domain/classify_gym.py#L123) and [fashion_mnist](https://github.com/Avuerro/NaturalComputing/blob/e16e4918d59195e9bba238b83d755a6751830d0c/Project/WANN/domain/classify_gym.py#L135).
+The code used to run the WANN implementation can be found in this folder, all the instructions below are still valid but there is only one caveat. The dataloader is adapted to work with local files due to cashing problems and data repositories being unreachable. So if you would like to run the network on fashionmnist or mnist data, please download the data first, then modify the locations in the classify_gym module. To be precise, you should change [mnist_256](https://github.com/Avuerro/NaturalComputing/blob/e16e4918d59195e9bba238b83d755a6751830d0c/Project/WANN/domain/classify_gym.py#L123) and [fashion_mnist](https://github.com/Avuerro/NaturalComputing/blob/e16e4918d59195e9bba238b83d755a6751830d0c/Project/WANN/domain/classify_gym.py#L135).
 
 ## Dependencies
 
