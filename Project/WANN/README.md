@@ -33,6 +33,11 @@ python wann_train.py -p p/fashion_mnist.json -n 8 -o 'outputfilename'
 ```
 If you would like to change the number of generations or population size, check the .json hyperparameter files and modify the values. There are multiple values that can be tweaked, such as tournament size and the number of times you would like to run the model. If you would like to experiment with the hyperparameters check out ```hypkey.txt``` and ```default_wann.json``` in the _p_ directory.
 
+#### Windows
+Running on windows is not as straightforward as on linux or macos, you're most likely going to need the [MSMPI package](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi). If you have installed MSMPI and run into problems where _mpirun_ is not recognized try changing the line [233 of wann_train.py](https://github.com/Avuerro/NaturalComputing/blob/aad0cbdf366da8f71a62c3b46bf0387bed83d823/Project/WANN/wann_train.py#L233) to :
+```
+subprocess.check_call(["mpiexec", "-np", str(n), sys.executable] +['-u']+ sys.argv, env=env, shell=True)
+```
 
 ## Testing Weight Agnostic Neural Networks and Analyzing performance
 
@@ -45,13 +50,6 @@ If you are interested in which pixels are used for which class by the model, you
 
 The [evaluateModel method](https://github.com/Avuerro/NaturalComputing/blob/0d00725c1f744b04c823e383d7d8336bb8856109/Project/WANN/wann_src/task.py#L143) and 
 [usedInputs method](https://github.com/Avuerro/NaturalComputing/blob/30cebfb059ec74fad595ca526b4133763729b541/Project/WANN/wann_src/task.py#L195) are extensions to the WANN codebase and only tested for the MNIST and Fashion MNIST task. 
-
-
-#### Windows
-Running on windows is not as straightforward as on linux or macos, you're most likely going to need the [MSMPI package](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi). If you have installed MSMPI and run into problems where _mpirun_ is not recognized try changing the line [233 of wann_train.py](https://github.com/Avuerro/NaturalComputing/blob/aad0cbdf366da8f71a62c3b46bf0387bed83d823/Project/WANN/wann_train.py#L233) to :
-```
-subprocess.check_call(["mpiexec", "-np", str(n), sys.executable] +['-u']+ sys.argv, env=env, shell=True)
-```
 
 
 **Based on the work by:**
