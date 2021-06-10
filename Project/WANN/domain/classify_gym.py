@@ -53,11 +53,25 @@ class ClassifyEnv(gym.Env):
     def reset(self):
         ''' Initialize State'''
         # print('Lucky number', np.random.randint(10)) # same randomness?
-        self.trainOrder = np.random.permutation(len(self.target))
+        self.trainOrder = self.get_sample(self.batch)#np.random.permutation(len(self.target))
         self.t = 0  # timestep
         self.currIndx = self.trainOrder[self.t:self.t+self.batch]
         self.state = self.trainSet[self.currIndx, :]
         return self.state
+
+    def get_sample(self,sample_size):
+        N_CLASSES_TO_USE = 10
+        # Create a list of indices of samples to test, ensuring an equal number of samples from each class
+        sample_indices = []
+        samples_per_class = int(sample_size/N_CLASSES_TO_USE)
+        for c in range(N_CLASSES_TO_USE):
+            c_indices = np.where(self.target == c)[0]
+            assert len(c_indices) >= samples_per_class, \
+                "Class {} has too few elements to reach the desired number of evaluation samples".format(c)
+            sample_indices.extend(np.random.permutation(c_indices)[:samples_per_class])
+        
+        # Return the list of sample indices
+        return sample_indices
 
     def step(self, action):
         '''

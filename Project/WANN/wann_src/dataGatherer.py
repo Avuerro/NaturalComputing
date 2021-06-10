@@ -109,7 +109,6 @@ class DataGatherer():
     for i in range(len(gStatLabel)):
       #e.g.         self.    fit_max          [:,None]
       evalString = 'self.' + gStatLabel[i] + '[:,None]'
-      print(evalString)
       genStats = np.hstack((genStats, eval(evalString)))
     lsave(pref + '_stats.out', genStats)
     # ------------------------------------------------------------------------ 
